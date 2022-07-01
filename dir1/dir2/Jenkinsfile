@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    choice(name: 'BUILD_RONDB_VERSION', choices: ['21.04', '22.10'], description: 'RonDB version to build. This is branch in SCM')
     stages {
         stage("build") {
             steps {
